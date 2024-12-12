@@ -1,0 +1,11 @@
+The CSS property `calc()` can sometimes produce unexpected results if you don't carefully consider operator precedence and unit consistency.  For example, the following code attempts to calculate the width of an element based on its parent's width:
+
+```css
+.element {
+  width: calc(50% - 10px);
+}
+```
+
+If the parent element doesn't have a defined width, the calculation will fail.  Even if the parent has a width, a missing unit in a `calc()` expression will lead to unexpected behavior and may render the element hidden.
+
+Another error can occur with nested `calc()` functions which can be confusing to parse and debug.
